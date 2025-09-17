@@ -216,7 +216,7 @@ async def stream_1min(websocket, contract_id, dailyLevels):
             if interaction:
                 interactions.append((level_name, interaction))
 
-        ms = market_status()
+        await websocket.send_json({"type": "market_status", **market_status()})
 
 
         payload = {
@@ -236,7 +236,6 @@ async def stream_1min(websocket, contract_id, dailyLevels):
             "rangeCurr_1h": curr_range_1h,
             "events_4h": events_4h,
             "events_1h": events_1h,
-            "market_status": ms,
         }
 
         try:
