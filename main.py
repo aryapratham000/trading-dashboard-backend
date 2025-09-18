@@ -14,7 +14,7 @@ import pandas_market_calendars as mcal
 
 
 app = FastAPI()
-contract_id = "CON.F.US.EP.U25"
+contract_id = "CON.F.US.EP.Z25"
 latest_snapshot_4h = None
 latest_snapshot_1h = None
 filters_enabled_4h = {
